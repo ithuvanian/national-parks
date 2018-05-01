@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Capstone.Web.Models
+@model List<Park>
+
+<div class="index_intro">
+    <p>Welcome! Click on one of the parks below to learn more:</p>
+</div>
+
+@foreach (Park thisPark in Model)
+{
+    string imagePath = "../../Content/img/photos/" + thisPark.ImageName;
+
+
+    <div class="index_listing">
+        <a href=@Url.Action("ParkDetail", "Home", new { parkCode = thisPark.ParkCode }) style="color: black">
+            <img src=@imagePath class="index_photo" />
+            <ul class="index_info">
+                <li class="park_title">
+                    @thisPark.ParkName
+                </li>
+                <li>
+                    <b>@thisPark.State</b>
+                </li>
+                <li>
+                    @thisPark.Description
+                </li>
+
+            </ul>
+        </a>
+    </div>
+
+}

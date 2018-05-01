@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>National Park Geek - @ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/stylesheet.css" />
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:400,400i,700" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img class="header_logo" src="~/Content/img/logo.png" />
+        <p class="header_title">National Park <span>Geek</span></p>
+        <img class="header_hiker" src="~/Content/img/hiker.png" />
+    </header>
+    <nav>
+        <ul>
+            <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+            <li><a href="@Url.Action("Survey", "Home")">Survey</a></li>
+            <li><a href="@Url.Action("About", "Home")">About</a></li>
+        </ul>
+    </nav>
+
+    <section id="main">
+
+        @RenderBody()
+
+    </section>
+    <footer>
+        <a href=@Url.Action("Index", "Home") style="color: white; text-decoration: none;">National Park Geek | 2018</a>
+    </footer>
+</body>
+</html>

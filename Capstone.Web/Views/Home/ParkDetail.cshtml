@@ -1,0 +1,158 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Capstone.Web.Models
+@model Park
+
+@{
+    string imagePath = "../Content/img/photos/" + Model.ImageName;
+    bool celsius = (bool)Session["Celsius"];
+}
+
+<div class="detail_container">
+    <img class="img_details" src=@imagePath />
+
+    <div class="details_text">
+        <h1>
+            @Model.ParkName
+        </h1>
+        <br />
+        <ul>
+            <li>
+                <b>@Model.State</b>
+            </li>
+            <br />
+            <li class="detail">
+                <span class="detail_listing">Founded: </span>
+                <span class="detail_value">@Model.YearFounded</span>
+            </li>
+            <li class="detail">
+                <span class="detail_listing">Area: </span>
+                <span class="detail_value">@Model.Acreage.ToString("n0") acres</span>
+            </li>
+            <li class="detail">
+                <span class="detail_listing">Elevation: </span>
+                <span class="detail_value">@Model.Elevation ft.</span>
+            </li>
+            <li class="detail">
+                <span class="detail_listing">Climate: </span>
+                <span class="detail_value">@Model.Climate</span>
+            </li>
+            <li class="detail">
+                <span class="detail_listing">Total miles of trails: </span>
+                <span class="detail_value">@Model.TrailMileage</span>
+            </li>
+            <li class="detail">
+                <span class="detail_listing">Total number of campsites: </span>
+                <span class="detail_value">@Model.NumberOfCampsites</span>
+            </li>
+            <li class="detail">
+                <span class="detail_listing">Total number of animal species: </span>
+                <span class="detail_value">@Model.AnimalSpecies</span>
+            </li>
+            <li class="detail">
+                <span class="detail_listing">Total visitors per year: </span>
+                <span class="detail_value">@Model.AnnualVisitors.ToString("n0")</span>
+            </li>
+            @if (Model.EntryFee > 0)
+            {
+                <li class="detail">
+                    <span class="detail_listing">Entry fee: </span>
+                    <span class="detail_value">$@Model.EntryFee</span>
+                </li>
+            }
+            else
+            {
+                <li class="detail">
+                    <span class="detail_listing">Entry fee: </span>
+                    <span class="detail_value">none</span>
+                </li>
+            }
+            <br />
+            <li>
+                @Model.Description
+            </li>
+            <br />
+            <li style="text-align: center">
+                <i>"@Model.Quote"</i><br /> -@Model.QuoteSrc
+            </li>
+
+        </ul>
+
+    </div>
+</div>
+
+<a href="#" name="weather"></a>
+<h2 class="weather_header">5-day Weather Forecast for @Model.ParkName:</h2>
+
+
+@Html.ActionLink("C / F", "SwitchUnits", "Home", null, null, "weather", new { parkCode = Model.ParkCode }, new { @class = "temperature_button" })
+<br />
+<table class="weather_forecast">
+    <br />
+    <tbody>
+        <tr class="weather_days">
+            <td></td>
+            <td>
+                @DateTime.Now.DayOfWeek
+            </td>
+            <td>
+                @DateTime.Now.AddDays(1).DayOfWeek
+            </td>
+            <td>
+                @DateTime.Now.AddDays(2).DayOfWeek
+            </td>
+            <td>
+                @DateTime.Now.AddDays(3).DayOfWeek
+            </td>
+            <td>
+                @DateTime.Now.AddDays(4).DayOfWeek
+            </td>
+
+        </tr>
+        <tr>
+            <td>Conditions</td>
+            @{
+                foreach (string conditions in Model.WeatherForecast.DaySummaries)
+                {
+                    string weatherImagePath = "../Content/img/weather/" + conditions + ".png";
+
+                    <td class="conditions">
+                        <img src=@weatherImagePath />
+                    </td>
+                }
+            }
+        </tr>
+        <tr>
+            <td>High</td>
+            @{
+                foreach (int temperature in Model.WeatherForecast.HighTemps)
+                {
+                    <td class="high_temp"><span class="temp_number">@temperature</span> &deg;@Model.WeatherForecast.TempScale</td>
+                }
+            }
+        </tr>
+        <tr>
+            <td>Low</td>
+            @{
+                foreach (int temperature in Model.WeatherForecast.LowTemps)
+                {
+                    <td class="low_temp"><span class="temp_number">@temperature</span> &deg;@Model.WeatherForecast.TempScale</td>
+                }
+            }
+        </tr>
+        <tr>
+            <td></td>
+            @{
+                foreach (string message in Model.WeatherForecast.Messages)
+                {
+                    <td class="messages">@message</td>
+                }
+            }
+        </tr>
+    </tbody>
+</table>
+
+
+

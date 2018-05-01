@@ -1,0 +1,32 @@
+﻿body {
+    font-family: sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.weather_forecast {
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.weather_forecast td {
+    width: 15vw;
+}
+
+.conditions img {
+    height: 100px;
+}
+
+.high_temp {
+    color: darkred;
+}
+
+.low_temp {
+    color: darkblue;
+}
+
+.messages {
+    font-size: .8em;
+}

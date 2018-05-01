@@ -1,0 +1,376 @@
+﻿/* reset */
+body {
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: 'Exo 2', sans-serif;
+}
+
+
+/* shared layout */
+
+header {
+    background-color: #809178;
+    height: 125px;
+    overflow: hidden;
+    position: relative;
+    padding-top: 10px;
+}
+
+.header_logo {
+    float: left;
+    margin-top: -10px;
+    max-width: 20%;
+    max-height: 90%;
+}
+
+.header_title {
+    float: left;
+    margin-top: 5px;
+    margin-left: 2vw;
+    height: 1em;
+    line-height: 1em;
+    color: white;
+    font-weight: bold;
+    font-size: 4em;
+}
+
+    .header_title span {
+        font-weight: normal;
+    }
+
+.header_hiker {
+    float: left;
+    margin-left: 2vw;
+    height: 4em;
+}
+
+nav {
+    background-color: #606d5b;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+    nav ul {
+        list-style: none;
+    }
+
+        nav ul li {
+            list-style: none;
+            display: inline-block;
+            margin: 0 1em;
+        }
+
+            nav ul li a {
+                padding: 8px 15px;
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+                nav ul li a:hover {
+                    text-decoration: underline;
+                    color: white;
+                }
+
+footer {
+    clear: left;
+    padding: 20px;
+    color: white;
+    background-color: #606d5b;
+}
+
+/* all pages */
+
+#main {
+    width: 100%;
+    flex: 1;
+    background: #c0c0c0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.field-validation-error {
+    color: darkred;
+}
+
+/* main index page */
+
+.index_intro {
+    display: flex;
+    justify-content: center;
+}
+
+    .index_intro p {
+        text-align: center;
+        font-size: 1.1em;
+    }
+
+.index_listing {
+    width: 80vw;
+    clear: both;
+    overflow: auto;
+    margin-top: 2em;
+    margin-left: 1em;
+}
+
+    .index_listing:not(:last-of-type) {
+        border-bottom: 3px dotted #aaa;
+    }
+
+.index_photo {
+    width: 25vw;
+    float: left;
+    margin-bottom: 2em;
+}
+
+
+.index_info {
+    width: 50vw;
+    float: left;
+}
+
+    .index_info li {
+        margin-bottom: 10px;
+    }
+
+.park_title {
+    font-size: 1.5em;
+}
+
+/* park detail page */
+
+.detail_container {
+    position: relative;
+    color: white;
+    overflow: hidden;
+    margin-bottom: 5vh;
+}
+
+.img_details {
+    width: 100%;
+    float: left;
+}
+
+.details_text {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    height: 100%;
+    width: 20%;
+    min-width: 400px;
+    overflow: hidden;
+    padding-left: 10px;
+    padding-right: 60px;
+    background-color: rgba(0,0,0,.4);
+}
+
+.detail {
+    line-height: 1.5em;
+}
+
+.detail_listing {
+    font-size: .95em;
+    font-style: italic;
+}
+
+.detail_value {
+    padding-left: .5em;
+}
+
+/* weather in details page */
+
+.weather_header {
+    margin-left: 50px;
+}
+
+.temperature_button {
+    padding: 7px;
+    background-color: #333;
+    border: 1px solid #ddd;
+    color: white;
+    text-decoration: none;
+    margin-left: 50px;
+}
+
+    .temperature_button:hover {
+        text-decoration: none;
+        background-color: white;
+        color: black;
+    }
+
+.weather_forecast {
+    font-size: 1.2em;
+    text-align: center;
+    margin-bottom: 5vw;
+    border-collapse: collapse;
+}
+
+    .weather_forecast td {
+        width: 15vw;
+    }
+
+        .weather_forecast td:first-of-type {
+            text-align: right;
+            transform: translateX(-1em);
+        }
+
+        .weather_forecast td:not(:last-of-type) {
+            border-right: 3px solid #aaa;
+        }
+
+.weather_days {
+    font-weight: bold;
+}
+
+.conditions img {
+    height: 100px;
+}
+
+.temp_number {
+    font-size: 1.4em;
+}
+
+.high_temp {
+    color: darkred;
+}
+
+.low_temp {
+    color: darkblue;
+}
+
+.messages {
+    font-size: .8em;
+    padding: 1em;
+    text-align: left;
+}
+
+/* survey page */
+
+.survey_container {
+    margin-left: 10vw;
+    position: relative;
+}
+
+.survey_table {
+    margin-bottom: 5vh;
+}
+
+    .survey_table tr {
+        height: 10vh;
+    }
+
+.survey_label {
+    text-align: right;
+    margin-right: 1em;
+}
+
+.survey_input {
+    border: 1px solid #999;
+    padding: 0 1em;
+    margin-left: 1em;
+    height: 3em;
+    background: #d0d0d0;
+}
+
+.radio_section li {
+    padding-top: 1em;
+}
+
+.radio_label {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 4px;
+}
+
+.radio_text {
+    margin-left: 4px;
+}
+
+.submit_button {
+    border: 1px solid white;
+    background: #444;
+    padding: 20px;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 5vh;
+    font-size: 1.1em;
+}
+
+/*replace radio buttons with labels that can be styled*/
+
+input[type="radio"] {
+    display: none;
+}
+
+    input[type="radio"] + label .dot {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        cursor: pointer;
+        border: 1px solid #999;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        background-color: #d0d0d0;
+    }
+
+    input[type="radio"]:checked + label .dot {
+        background-color: #333;
+        border: 1px solid #333;
+    }
+
+/* survey results page*/
+
+.results_header {
+    margin-left: 5vw;
+}
+
+.results_table {
+    border-collapse: collapse;
+    margin-top: 5vh;
+    margin-left: 5vw;
+}
+
+    .results_table td:nth-of-type(3) {
+        width: 50px;
+    }
+
+.survey_results_rows {
+    height: 5em;
+    border-bottom: 3px solid #aaa;
+    text-align: left;
+}
+
+.survey_data {
+    padding-right: 30px;
+}
+
+    .survey_data img {
+        margin: 1em 0;
+    }
+
+.vote_count {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.results_button {
+    border: 1px solid white;
+    background: #444;
+    padding: 20px;
+    color: #fff;
+    cursor: pointer;
+    margin: 5vw;
+    font-size: 1.1em;
+}
+
+.about {
+    padding: 1em;
+}

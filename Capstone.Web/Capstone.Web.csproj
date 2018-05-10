@@ -131,6 +131,7 @@
     <Content Include="Content\img\weather\thunderstorms.png" />
     <Content Include="Content\stylesheet.css" />
     <Content Include="Global.asax" />
+    <None Include="Properties\PublishProfiles\CapstoneWeb20180430105626 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

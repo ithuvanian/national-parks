@@ -1,0 +1,99 @@
+﻿@using Capstone.Web.Models;
+
+@{
+    ViewBag.Title = "Survey";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Survey
+
+
+
+<div class="survey_container">
+    <h1>Park Survey</h1>
+
+    <p>Vote for your favorite National Park!</p>
+
+
+    @using (Html.BeginForm("Survey", "Home", FormMethod.Post))
+    {
+
+
+        <table class="survey_table">
+            <tr>
+                <td>
+                    @Html.Label("Your Favorite National Park")
+                </td>
+                <td>
+                    @Html.DropDownListFor(m => m.ParkName, ViewBag.ParkNameDropdown as List<SelectListItem>, new { @class = "survey_input" })
+                    <span>
+                        @Html.ValidationMessageFor(m => m.ParkName)
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="survey_label">
+                    @Html.Label("Your Email")
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.EmailAddress, new { @class = "survey_input" })
+                    <span>
+                        @Html.ValidationMessageFor(m => m.EmailAddress)
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="survey_label">
+                    @Html.Label("State of Residence")
+                </td>
+                <td>
+                    @Html.DropDownListFor(m => m.StateCode, Model.Codes() as List<SelectListItem>, new { @class = "survey_input" })
+                </td>
+            </tr>
+            <tr>
+                <td class="survey_label">
+                    @Html.Label("Your Activity Level")
+                </td>
+                <td>
+
+                    <ul class="radio_section">
+                        <li>
+                            @Html.RadioButtonFor(m => m.ActivityLevel, true, new { @name = "Extremely Active", @class = "radio_button", @id = "radio1" })
+                            <label for="radio1" class="radio_label">
+                                <span class="dot"></span>
+                                <span class="radio_text">Extremely Active</span>
+                            </label>
+                        </li>
+                        <li>
+                            @Html.RadioButtonFor(m => m.ActivityLevel, true, new { @name = "Active", @class = "radio_button", @id = "radio2" })
+                            <label for="radio2" class="radio_label">
+                                <span class="dot"></span>
+                                <span class="radio_text">Active</span>
+                            </label>
+                        </li>
+                        <li>
+                            @Html.RadioButtonFor(m => m.ActivityLevel, true, new { @name = "Inactive", @class = "radio_button", @id = "radio3" })
+                            <label for="radio3" class="radio_label">
+                                <span class="dot"></span>
+                                <span class="radio_text">Inactive</span>
+                            </label>
+                        </li>
+                        <li>
+                            @Html.RadioButtonFor(m => m.ActivityLevel, true, new { @name = "Sedentary", @class = "radio_button", @id = "radio4" })
+                            <label for="radio4" class="radio_label">
+                                <span class="dot"></span>
+                                <span class="radio_text">Sedentary</span>
+                            </label>
+                        </li>
+                    </ul>
+
+                </td>
+            </tr>
+        </table>
+
+
+
+        <button class="submit_button">Submit and See Results >></button>
+    }
+    
+</div>

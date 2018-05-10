@@ -1,0 +1,46 @@
+﻿@using Capstone.Web.Models;
+
+@{
+    ViewBag.Title = "Survey Results";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model List<SurveyResult>
+
+
+<h1 class="results_header">Survey Results</h1>
+<table class="results_table">
+    <tr class="survey_results_rows">
+        <th>
+
+        </th>
+        <th>
+            Park Name
+        </th>
+        <th>
+            Votes
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        string imgName = "/Content/img/photos/" + item.ParkCode + ".jpg";
+
+        <tr class="survey_results_rows">
+            <td class="survey_data">
+                <img style="width: 100px" src="@imgName" alt="park_img" />
+            </td>
+            <td class="survey_data survey_results_rows">
+                @item.ParkName
+            </td>
+            <td class="survey_data survey_results_rows vote_count">
+                @item.NumOfSurveys
+            </td>
+        </tr>
+    }
+
+</table>
+
+<button class="results_button">
+    @Html.ActionLink("Return to homepage >>", "Index", "Home", new { style = "color: white; text-decoration: none" })
+</button>

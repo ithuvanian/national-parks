@@ -1,4 +1,4 @@
-This is a C# .NET MVC application that can be run from MS Visual Studio. Database queries are prepared for SQL Server. First, create a database titled "ParkWeather", then run db/schema.sql and db/data.sql.
+This is a C# .NET MVC application that can be run from MS Visual Studio with IIS. A database query was prepared for SQL Server. First, create a database titled "ParkWeather", then run "npgeek.sql".
 
 This project was created in Week 9 of the Tech Elevator bootcamp. See	"National Park Weather Service.pdf" for the original guidelines.
 

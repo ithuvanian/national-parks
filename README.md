@@ -1,5 +1,6 @@
-This project was created in Week 9 of the Tech Elevator bootcamp, using Visual Studio. 
-See the pdf for the original guidelines.
+This is a C# .NET MVC application that can be run from MS Visual Studio. Database queries are prepared for SQL Server. First, create a database titled "ParkWeather", then run db/schema.sql and db/data.sql.
+
+This project was created in Week 9 of the Tech Elevator bootcamp. See the pdf for the original guidelines.
 
 All images and icons are used under license, and come from the following sources:
 Cuyahoga: https://www.publicdomainpictures.net/pictures/230000/velka/grand-teton-mountains.jpg

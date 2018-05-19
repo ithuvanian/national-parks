@@ -12,7 +12,7 @@ namespace Capstone.Web.Controllers
     public class HomeController : Controller
     {
 
-        string connectionString = @"Data Source=localhost\sqlexpress;Initial Catalog = ParkWeather; Integrated Security = True";
+        string connectionString = ConfigurationManager.ConnectionStrings["NPGeekDB"].ConnectionString;
 
         // GET: Home
         public ActionResult Index()

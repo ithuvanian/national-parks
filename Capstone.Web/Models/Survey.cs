@@ -99,6 +99,7 @@ namespace Capstone.Web.Models
 
         }
 
+        //for displaying state abbreviations in dropdown menu
         public List<SelectListItem> Codes()
         {
             List<SelectListItem> codes = new List<SelectListItem>();

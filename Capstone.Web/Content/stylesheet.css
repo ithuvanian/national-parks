@@ -12,24 +12,31 @@ body {
 
 header {
     background-color: #809178;
-    height: 125px;
+    height: 100px;
     overflow: hidden;
     position: relative;
+    display: flex;
+    justify-content: center;
     padding-top: 10px;
 }
 
 .header_logo {
-    float: left;
-    margin-top: -10px;
+    position: absolute;
+    left: 0;
+    top: 0;
     max-width: 20%;
     max-height: 90%;
 }
 
+.header_main {
+    clear: both;
+    margin-top: 25px;
+}
+
 .header_title {
     float: left;
-    margin-top: 5px;
-    margin-left: 2vw;
     height: 1em;
+    margin-top: 0;
     line-height: 1em;
     color: white;
     font-weight: bold;
@@ -44,6 +51,18 @@ header {
     float: left;
     margin-left: 2vw;
     height: 4em;
+}
+
+@media screen and (max-width: 1080px) {
+    header {
+        height: 125px;
+    }
+    .header_logo {
+        height: 60px;
+    }
+    .header_main {
+        margin-top: 50px;
+    }
 }
 
 nav {
